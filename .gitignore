@@ -9,7 +9,7 @@
 /coverage
 
 # next.js
-# /.next/
+/.next/
 /.next-local/
 /out/
 
@@ -37,7 +37,6 @@ lerna-debug.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # IDE
 .vscode/

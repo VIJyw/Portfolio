@@ -9,7 +9,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
-    workerThreads: true,
   },
 };
 
