@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #f8fafc;
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-glow: rgba(99, 102, 241, 0.4);
+  --secondary: #1e1e2e;
+  --accent: #06b6d4;
+  --muted: #94a3b8;
+  --border: #2d2d3d;
+  /* Font variables (previously provided by next/font). */
+  --font-inter: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-heading: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Site-wide ambient motion background */
+.site-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  background:
+    radial-gradient(900px circle at 15% 12%, rgba(99, 102, 241, 0.14), transparent 42%),
+    radial-gradient(900px circle at 92% 18%, rgba(217, 70, 239, 0.11), transparent 45%),
+    radial-gradient(900px circle at 55% 92%, rgba(6, 182, 212, 0.10), transparent 48%);
+  filter: blur(0px);
+  animation: ambientDrift 16s ease-in-out infinite;
+}
+
+@keyframes ambientDrift {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate3d(16px, -10px, 0px) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-ambient {
+    animation: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 4px;
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card hover glow */
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+}
+
+/* Subtle animated gradient accents (no GIF required) */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shineSweep {
+  0% { transform: translateX(-140%) skewX(-18deg); opacity: 0; }
+  15% { opacity: 0.12; }
+  55% { opacity: 0.08; }
+  100% { transform: translateX(140%) skewX(-18deg); opacity: 0; }
+}
+
+.bg-mesh {
+  background:
+    radial-gradient(600px circle at 20% 20%, rgba(99, 102, 241, 0.18), transparent 40%),
+    radial-gradient(700px circle at 80% 30%, rgba(217, 70, 239, 0.14), transparent 42%),
+    radial-gradient(700px circle at 50% 85%, rgba(6, 182, 212, 0.10), transparent 45%);
+}
+
+.card-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-premium::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    120deg,
+    rgba(99, 102, 241, 0.0),
+    rgba(99, 102, 241, 0.25),
+    rgba(217, 70, 239, 0.18),
+    rgba(6, 182, 212, 0.14),
+    rgba(99, 102, 241, 0.0)
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+}
+
+.card-premium:hover::before {
+  opacity: 1;
+}
+
+.card-premium::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -40%;
+  width: 45%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  animation: shineSweep 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.text-grad-hero {
+  background: linear-gradient(135deg, #ffffff, #c7d2fe 40%, #e9d5ff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
