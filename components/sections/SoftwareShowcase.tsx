@@ -86,7 +86,7 @@ export default function SoftwareShowcase() {
           transition={{ duration: 0.3 }}
           className="flex flex-col flex-1"
         >
-          <div className="mb-5">
+          <div className="mb-4">
             <h3 className="text-lg font-heading font-semibold text-white mb-1">
               {currentCategory}
             </h3>
@@ -103,10 +103,10 @@ export default function SoftwareShowcase() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, delay: index * 0.03 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="group relative rounded-xl border border-white/[0.08] bg-black/20 p-4 hover:bg-black/30 hover:border-white/[0.12] transition-all cursor-pointer flex flex-col"
+                className="group relative rounded-xl border border-white/[0.08] bg-black/20 p-3 hover:bg-black/30 hover:border-white/[0.12] transition-all cursor-pointer flex flex-col"
               >
                 {software.logo ? (
-                  <div className="relative w-full h-16 mb-3 flex items-center justify-center rounded-lg bg-white p-3 group-hover:bg-gray-50 transition-colors shadow-sm">
+                  <div className="relative w-full h-16 mb-2 flex items-center justify-center rounded-lg bg-white p-3 group-hover:bg-gray-50 transition-colors shadow-sm flex-1">
                     <Image
                       src={software.logo}
                       alt={software.name}
@@ -121,13 +121,13 @@ export default function SoftwareShowcase() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-16 mb-3 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20">
+                  <div className="w-full h-16 mb-2 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex-1">
                     <span className="text-lg font-semibold text-indigo-300">
                       {software.name.charAt(0)}
                     </span>
                   </div>
                 )}
-                <div className="text-xs text-slate-400 text-center group-hover:text-slate-300 transition-colors leading-tight mt-auto">
+                <div className="text-[11px] text-slate-400 text-center group-hover:text-slate-300 transition-colors leading-tight mt-auto">
                   {software.name}
                 </div>
               </motion.div>

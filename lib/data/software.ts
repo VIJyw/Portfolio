@@ -1,7 +1,7 @@
 export interface Software {
   name: string;
   logo?: string; // Path to logo image in /public/images/software/
-  category: "Product" | "Analytics" | "Project" | "Development";
+  // Note: category is not needed here since it's determined by the Record key in softwareByCategory
 }
 
 export const softwareByCategory: Record<string, Software[]> = {
