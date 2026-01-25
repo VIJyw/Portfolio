@@ -5,8 +5,8 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Download, ArrowRight } from "lucide-react";
 import { useInViewFallback } from "@/hooks/useInViewFallback";
-import { productImpactMetrics } from "@/lib/data/case-studies";
 import { NOTION_PORTFOLIO_URL } from "@/lib/constants";
+import SoftwareShowcase from "@/components/sections/SoftwareShowcase";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -31,7 +31,7 @@ export default function Hero() {
       />
 
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-10 items-start">
+        <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-10 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -89,33 +89,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 card-premium"
-          >
-            <div className="text-xs uppercase tracking-wider text-slate-500 mb-4">
-              Highlights
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {productImpactMetrics.map((m, i) => (
-                <motion.div
-                  key={`${m.value}-${m.label}`}
-                  className="rounded-xl border border-white/[0.08] bg-black/20 p-4"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                  transition={{ duration: 0.35, delay: 0.08 + i * 0.05 }}
-                  whileHover={{ y: -4, scale: 1.01 }}
-                >
-                  <div className="text-xl font-heading font-bold text-white">
-                    {m.value}
-                  </div>
-                  <div className="text-xs text-slate-400">{m.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <SoftwareShowcase />
         </div>
       </div>
     </section>

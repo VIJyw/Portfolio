@@ -70,8 +70,8 @@ export default function CaseStudyPage({
             </h1>
             <p className="text-slate-300 text-lg">{cs.oneLine}</p>
 
-            {cs.notionUrl && (
-              <div className="mt-4">
+            <div className="mt-4 flex flex-wrap gap-4">
+              {cs.notionUrl && (
                 <a
                   href={cs.notionUrl}
                   target="_blank"
@@ -80,8 +80,18 @@ export default function CaseStudyPage({
                 >
                   View in Notion →
                 </a>
-              </div>
-            )}
+              )}
+              {cs.figmaUrl && (
+                <a
+                  href={cs.figmaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-indigo-200"
+                >
+                  View Figma Prototype →
+                </a>
+              )}
+            </div>
 
             {cs.image && (
               <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden border border-white/[0.08] bg-black/20">

@@ -69,37 +69,37 @@ export default function FeaturedWork() {
                   />
                 </div>
               )}
-              <div className="text-xs text-slate-500 mb-2">{cs.heroAccent}</div>
-              <h3 className="text-xl font-heading font-semibold text-white mb-2">
+              <div className="text-xs text-slate-400 mb-2">{cs.heroAccent}</div>
+              <h3 className="text-xl font-heading font-semibold text-white mb-3">
                 {cs.card.productName}
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-500 mb-2">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 mb-2.5 font-medium">
                     Problem
                   </div>
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className="text-base text-slate-200 leading-relaxed">
                     {cs.card.problem}
                   </p>
                 </div>
 
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-500 mb-2">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 mb-2.5 font-medium">
                     My role
                   </div>
-                  <p className="text-sm text-slate-300">{cs.card.role}</p>
+                  <p className="text-base text-slate-200 leading-relaxed">{cs.card.role}</p>
                 </div>
 
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-500 mb-2">
+                  <div className="text-xs uppercase tracking-wider text-slate-400 mb-2.5 font-medium">
                     Impact
                   </div>
-                  <ul className="space-y-1 text-sm text-slate-300">
+                  <ul className="space-y-2 text-base text-slate-200">
                     {cs.card.impact.map((x) => (
-                      <li key={x} className="flex gap-2">
+                      <li key={x} className="flex gap-2.5">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 shrink-0" />
-                        <span className="flex-1">{x}</span>
+                        <span className="flex-1 leading-relaxed">{x}</span>
                       </li>
                     ))}
                   </ul>
@@ -109,12 +109,10 @@ export default function FeaturedWork() {
               <div className="mt-6 pt-5 border-t border-white/[0.06]">
                 <div className="grid grid-cols-2 gap-3">
                   <a
-                    href={cs.notionUrl ?? "https://www.notion.so/Vijay-Walunj-Product-Manager-Project-Manager-Data-Analyst-2a8148e21a7c803f948cc174f7de6be2?source=copy_link"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+                    href={`/case-studies/${cs.slug}`}
+                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-base font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
                   >
-                    View case study
+                    Read more
                     <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">
                       →
                     </span>
@@ -123,7 +121,7 @@ export default function FeaturedWork() {
                     href={cs.notionUrl ?? "https://www.notion.so/Vijay-Walunj-Product-Manager-Project-Manager-Data-Analyst-2a8148e21a7c803f948cc174f7de6be2?source=copy_link"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-sm font-semibold border border-white/[0.14] text-white hover:bg-white/[0.06] transition-colors"
+                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-base font-semibold border border-white/[0.14] text-white hover:bg-white/[0.06] transition-colors"
                   >
                     Open in Notion
                     <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">
