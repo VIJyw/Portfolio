@@ -103,17 +103,17 @@ export default function SoftwareShowcase() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, delay: index * 0.03 }}
                 whileHover={{ y: -4, scale: 1.05 }}
-                className="group relative rounded-xl border border-white/[0.08] bg-black/20 p-3 hover:bg-black/30 hover:border-white/[0.12] transition-all cursor-pointer flex flex-col"
+                className="group relative rounded-xl border border-white/[0.08] bg-black/20 p-2.5 hover:bg-black/30 hover:border-white/[0.12] transition-all cursor-pointer flex flex-col"
               >
                 {software.logo ? (
-                  <div className="relative w-full h-16 mb-2 flex items-center justify-center rounded-lg bg-white p-3 group-hover:bg-gray-50 transition-colors shadow-sm flex-1">
+                  <div className="relative w-full h-20 mb-1 flex items-center justify-center rounded-lg bg-white p-1 group-hover:bg-gray-50 transition-colors shadow-sm overflow-hidden">
                     <Image
                       src={software.logo}
                       alt={software.name}
-                      width={56}
-                      height={56}
-                      className="object-contain w-full h-full"
-                      style={{ filter: 'contrast(1.1)' }}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                      style={{ width: '90%', height: '90%', filter: 'contrast(1.1)' }}
                       onError={(e) => {
                         // Hide image if it fails to load
                         e.currentTarget.style.display = 'none';
@@ -121,13 +121,13 @@ export default function SoftwareShowcase() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-16 mb-2 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex-1">
-                    <span className="text-lg font-semibold text-indigo-300">
+                  <div className="w-full h-20 mb-1 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20">
+                    <span className="text-2xl font-semibold text-indigo-300">
                       {software.name.charAt(0)}
                     </span>
                   </div>
                 )}
-                <div className="text-[11px] text-slate-400 text-center group-hover:text-slate-300 transition-colors leading-tight mt-auto">
+                <div className="text-[11px] text-slate-400 text-center group-hover:text-slate-300 transition-colors leading-tight">
                   {software.name}
                 </div>
               </motion.div>
