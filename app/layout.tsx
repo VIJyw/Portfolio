@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
 import ScrollProgress from "@/components/layout/ScrollProgress";
 import MobileConnectDock from "@/components/layout/MobileConnectDock";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Vijay | Product Manager & Technical Program Manager",
@@ -43,7 +51,7 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={playfairDisplay.variable}>
       <body className="antialiased bg-slate-900 text-white relative">
         <div className="site-ambient" aria-hidden="true" />
         <Navbar />

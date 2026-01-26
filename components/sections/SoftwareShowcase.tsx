@@ -60,7 +60,7 @@ export default function SoftwareShowcase() {
                 onClick={() => setActiveCategory(index)}
                 className={`h-1.5 rounded-full transition-all ${
                   index === activeCategory
-                    ? "w-6 bg-indigo-500"
+                    ? "w-6 bg-navy"
                     : "w-1.5 bg-white/[0.2] hover:bg-white/[0.3]"
                 }`}
                 aria-label={`Go to ${softwareCategories[index]}`}
@@ -121,8 +121,8 @@ export default function SoftwareShowcase() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-20 mb-1 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20">
-                    <span className="text-2xl font-semibold text-indigo-300">
+                  <div className="w-full h-20 mb-1 flex items-center justify-center rounded-lg bg-gradient-to-br from-navy-25 to-orange-25">
+                    <span className="text-2xl font-semibold text-navy-light">
                       {software.name.charAt(0)}
                     </span>
                   </div>

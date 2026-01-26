@@ -26,7 +26,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-2 text-slate-300 leading-relaxed">
       {items.map((item, i) => (
         <li key={i} className="flex gap-3">
-          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 shrink-0" />
+          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400 shrink-0" />
           <span className="flex-1">{item}</span>
         </li>
       ))}
@@ -76,7 +76,7 @@ export default function CaseStudyPage({
                   href={cs.notionUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-indigo-200"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-navy-light hover:text-navy transition-colors"
                 >
                   View in Notion →
                 </a>
@@ -86,7 +86,7 @@ export default function CaseStudyPage({
                   href={cs.figmaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-indigo-200"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-navy-light hover:text-navy transition-colors"
                 >
                   View Figma Prototype →
                 </a>
@@ -168,7 +168,7 @@ export default function CaseStudyPage({
         </Section>
 
         <div className="pt-10 border-t border-white/[0.06]">
-          <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-6">
+          <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-r from-navy-10 to-orange-10 p-6">
             <div className="text-white text-lg font-heading font-semibold mb-2">
               Want the full story in context?
             </div>
@@ -178,7 +178,7 @@ export default function CaseStudyPage({
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={NOTION_PORTFOLIO_URL}
-                className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+                className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-navy text-gray-light hover:bg-navy-light transition-colors"
               >
                 View more case studies
               </a>

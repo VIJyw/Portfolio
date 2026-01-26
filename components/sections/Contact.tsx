@@ -46,12 +46,12 @@ export default function Contact() {
       <div className="absolute inset-0 bg-mesh pointer-events-none opacity-45" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute -top-24 -left-40 w-[520px] h-[520px] bg-indigo-500/10 rounded-full blur-3xl"
+          className="absolute -top-24 -left-40 w-[520px] h-[520px] bg-navy-10 rounded-full blur-3xl"
           animate={{ x: [0, 22, 0], y: [0, 14, 0], opacity: [0.22, 0.42, 0.22] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-32 -right-40 w-[560px] h-[560px] bg-fuchsia-500/10 rounded-full blur-3xl"
+          className="absolute -bottom-32 -right-40 w-[560px] h-[560px] bg-orange-10 rounded-full blur-3xl"
           animate={{ x: [0, -18, 0], y: [0, -12, 0], opacity: [0.20, 0.38, 0.20] }}
           transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 0.35 }}
         />
@@ -77,21 +77,21 @@ export default function Contact() {
             Case studies for context, resume for the quick view. If there’s a role where I can help, I’d love to talk.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 px-4 sm:px-0">
             <a
               href={NOTION_PORTFOLIO_URL}
-              className="group inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+              className="group inline-flex items-center justify-center rounded-lg px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold bg-navy text-gray-light hover:bg-navy-light transition-colors w-full sm:w-auto"
             >
               View case studies
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
             <a
               href="/Vijay_Walunj_Resume.pdf"
               download
-              className="group inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold border border-white/[0.14] text-white hover:bg-white/[0.06] transition-colors"
+              className="group inline-flex items-center justify-center rounded-lg px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold border border-white/[0.14] text-white hover:bg-white/[0.06] transition-colors w-full sm:w-auto"
             >
               Download resume
-              <Download className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
+              <Download className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </motion.div>
@@ -131,11 +131,11 @@ export default function Contact() {
                     transition={{ duration: 0.35, delay: 0.18 + index * 0.05 }}
                     whileHover={{ y: -4, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-black/20 px-4 py-2.5 text-sm text-white hover:bg-white/[0.06] transition-colors"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-black/20 px-3 sm:px-4 py-2.5 text-xs sm:text-sm text-white hover:bg-white/[0.06] transition-colors w-full sm:w-auto"
                     aria-label={link.name}
                     title={link.label}
                   >
-                    <Icon className="h-4 w-4 text-indigo-300 group-hover:text-indigo-200" />
+                    <Icon className="h-4 w-4 text-navy-light group-hover:text-navy transition-colors" />
                     <span className="font-semibold">{link.name}</span>
                   </motion.a>
                 );

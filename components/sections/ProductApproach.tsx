@@ -51,7 +51,7 @@ export default function ProductApproach() {
           className="mb-10"
         >
           <div className="text-xs uppercase tracking-wider text-slate-500 mb-3 inline-flex items-center gap-2">
-            <Compass className="h-4 w-4 text-indigo-300" />
+            <Compass className="h-4 w-4 text-navy-light" />
             How I think
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-2">
@@ -79,7 +79,7 @@ export default function ProductApproach() {
               <ul className="space-y-2 text-sm text-slate-300 leading-relaxed">
                 {b.bullets.map((t) => (
                   <li key={t} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 shrink-0" />
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-navy shrink-0" />
                     <span className="flex-1">{t}</span>
                   </li>
                 ))}

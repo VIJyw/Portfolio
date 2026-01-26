@@ -15,15 +15,42 @@ const config: Config = {
         primary: {
           DEFAULT: "var(--primary)",
           light: "var(--primary-light)",
+          hover: "var(--primary-hover)",
         },
         secondary: "var(--secondary)",
-        accent: "var(--accent)",
+        accent: {
+          DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
+        },
         muted: "var(--muted)",
         border: "var(--border)",
+        // New color palette
+        navy: {
+          DEFAULT: "#2A5C8E",
+          light: "#3A6CA8",
+          hover: "#4A7CC2",
+          10: "rgba(42, 92, 142, 0.1)",
+          15: "rgba(42, 92, 142, 0.15)",
+          25: "rgba(42, 92, 142, 0.25)",
+        },
+        orange: {
+          DEFAULT: "#A86C4A",
+          light: "#B87C5A",
+          hover: "#C88C6A",
+          10: "rgba(168, 108, 74, 0.1)",
+          15: "rgba(168, 108, 74, 0.15)",
+          25: "rgba(168, 108, 74, 0.25)",
+        },
+        gray: {
+          light: "#F2F2F2",
+          DEFAULT: "#404040",
+          dark: "#4F555A",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+        fancy: ["var(--font-playfair)", "Georgia", "serif"],
       },
       fontSize: {
         "4xl": ["2.5rem", { lineHeight: "3rem", letterSpacing: "-0.01em" }],

@@ -20,12 +20,12 @@ export default function Hero() {
       {/* Animated background accents */}
       <div className="absolute inset-0 bg-mesh pointer-events-none" />
       <motion.div
-        className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none"
+        className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-navy-10 blur-3xl pointer-events-none"
         animate={{ x: [0, 18, 0], y: [0, 10, 0], opacity: [0.25, 0.45, 0.25] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-fuchsia-500/10 blur-3xl pointer-events-none"
+        className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-orange-10 blur-3xl pointer-events-none"
         animate={{ x: [0, -16, 0], y: [0, -10, 0], opacity: [0.22, 0.4, 0.22] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
       />
@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
                 href={NOTION_PORTFOLIO_URL}
-                className="group inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+                className="group inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-navy text-gray-light hover:bg-navy-light transition-colors"
               >
                 View case studies
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />

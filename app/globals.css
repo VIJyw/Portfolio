@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0f;
-  --foreground: #f8fafc;
-  --primary: #6366f1;
-  --primary-light: #818cf8;
-  --primary-glow: rgba(99, 102, 241, 0.4);
-  --secondary: #1e1e2e;
-  --accent: #06b6d4;
-  --muted: #94a3b8;
-  --border: #2d2d3d;
+  --background: #000000;
+  --foreground: #F2F2F2;
+  --primary: #2A5C8E;
+  --primary-light: #3A6CA8;
+  --primary-hover: #4A7CC2;
+  --primary-glow: rgba(42, 92, 142, 0.4);
+  --secondary: #404040;
+  --accent: #A86C4A;
+  --accent-hover: #B87C5A;
+  --muted: #4F555A;
+  --border: #404040;
   /* Font variables (previously provided by next/font). */
   --font-inter: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -53,9 +55,9 @@ body {
   pointer-events: none;
   opacity: 0.9;
   background:
-    radial-gradient(900px circle at 15% 12%, rgba(99, 102, 241, 0.14), transparent 42%),
-    radial-gradient(900px circle at 92% 18%, rgba(217, 70, 239, 0.11), transparent 45%),
-    radial-gradient(900px circle at 55% 92%, rgba(6, 182, 212, 0.10), transparent 48%);
+    radial-gradient(900px circle at 15% 12%, rgba(42, 92, 142, 0.14), transparent 42%),
+    radial-gradient(900px circle at 92% 18%, rgba(168, 108, 74, 0.11), transparent 45%),
+    radial-gradient(900px circle at 55% 92%, rgba(79, 85, 90, 0.10), transparent 48%);
   filter: blur(0px);
   animation: ambientDrift 16s ease-in-out infinite;
 }
@@ -101,10 +103,10 @@ h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1e1e2e;
+  background: #404040;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4f46e5;
+  background: #2A5C8E;
   border-radius: 4px;
 }
 
@@ -115,14 +117,14 @@ h6 {
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+  background: linear-gradient(135deg, #2A5C8E, #A86C4A, #4F555A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Card hover glow */
 .card-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 30px rgba(42, 92, 142, 0.2);
 }
 
 /* Subtle animated gradient accents (no GIF required) */
@@ -141,9 +143,9 @@ h6 {
 
 .bg-mesh {
   background:
-    radial-gradient(600px circle at 20% 20%, rgba(99, 102, 241, 0.18), transparent 40%),
-    radial-gradient(700px circle at 80% 30%, rgba(217, 70, 239, 0.14), transparent 42%),
-    radial-gradient(700px circle at 50% 85%, rgba(6, 182, 212, 0.10), transparent 45%);
+    radial-gradient(600px circle at 20% 20%, rgba(42, 92, 142, 0.18), transparent 40%),
+    radial-gradient(700px circle at 80% 30%, rgba(168, 108, 74, 0.14), transparent 42%),
+    radial-gradient(700px circle at 50% 85%, rgba(79, 85, 90, 0.10), transparent 45%);
 }
 
 .card-premium {
@@ -157,11 +159,11 @@ h6 {
   inset: -2px;
   background: linear-gradient(
     120deg,
-    rgba(99, 102, 241, 0.0),
-    rgba(99, 102, 241, 0.25),
-    rgba(217, 70, 239, 0.18),
-    rgba(6, 182, 212, 0.14),
-    rgba(99, 102, 241, 0.0)
+    rgba(42, 92, 142, 0.0),
+    rgba(42, 92, 142, 0.25),
+    rgba(168, 108, 74, 0.18),
+    rgba(79, 85, 90, 0.14),
+    rgba(42, 92, 142, 0.0)
   );
   background-size: 300% 300%;
   animation: gradientShift 10s ease-in-out infinite;
@@ -192,7 +194,7 @@ h6 {
 }
 
 .text-grad-hero {
-  background: linear-gradient(135deg, #ffffff, #c7d2fe 40%, #e9d5ff 70%);
+  background: linear-gradient(135deg, #F2F2F2, #2A5C8E 40%, #A86C4A 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -28,7 +28,7 @@ export default function FeaturedWork() {
         >
           <div>
             <div className="text-xs uppercase tracking-wider text-slate-500 mb-3 inline-flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-indigo-300" />
+              <Sparkles className="h-4 w-4 text-navy-light" />
               Featured case studies
             </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-2">
@@ -98,7 +98,7 @@ export default function FeaturedWork() {
                   <ul className="space-y-2 text-base text-slate-200">
                     {cs.card.impact.map((x) => (
                       <li key={x} className="flex gap-2.5">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 shrink-0" />
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-navy shrink-0" />
                         <span className="flex-1 leading-relaxed">{x}</span>
                       </li>
                     ))}
@@ -110,7 +110,7 @@ export default function FeaturedWork() {
                 <div className="grid grid-cols-2 gap-3">
                   <a
                     href={`/case-studies/${cs.slug}`}
-                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-base font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+                    className="group inline-flex items-center justify-center w-full rounded-lg px-5 py-3 text-base font-semibold bg-navy text-gray-light hover:bg-navy-light transition-colors"
                   >
                     Read more
                     <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">
@@ -137,7 +137,7 @@ export default function FeaturedWork() {
         <div className="mt-8 sm:hidden">
           <a
             href={NOTION_PORTFOLIO_URL}
-            className="inline-flex text-sm font-semibold text-indigo-300 hover:text-indigo-200"
+            className="inline-flex text-sm font-semibold text-navy-light hover:text-navy transition-colors"
           >
             View all case studies →
           </a>

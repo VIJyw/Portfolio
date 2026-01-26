@@ -24,7 +24,7 @@ export default function ImpactMetrics() {
           className="mb-10"
         >
           <div className="text-xs uppercase tracking-wider text-slate-500 mb-3 inline-flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-indigo-300" />
+            <TrendingUp className="h-4 w-4 text-navy-light" />
             Product impact
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-2">

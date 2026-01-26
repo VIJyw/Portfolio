@@ -75,14 +75,14 @@ const categories: SkillCategory[] = [
       "Stakeholder alignment and decision-making with clear narratives",
     ],
     logos: [
-      { label: "PRD", fg: "text-indigo-200", bg: "bg-indigo-500/15", border: "border-indigo-500/25" },
-      { label: "Roadmap", fg: "text-indigo-200", bg: "bg-indigo-500/15", border: "border-indigo-500/25" },
+      { label: "PRD", fg: "text-navy-light", bg: "bg-navy-15", border: "border-navy-25" },
+      { label: "Roadmap", fg: "text-navy-light", bg: "bg-navy-15", border: "border-navy-25" },
       { label: "Discovery", fg: "text-slate-200", bg: "bg-white/[0.06]", border: "border-white/[0.10]" },
       { label: "GTM", fg: "text-slate-200", bg: "bg-white/[0.06]", border: "border-white/[0.10]" },
-      { label: "Figma", fg: "text-fuchsia-200", bg: "bg-fuchsia-500/15", border: "border-fuchsia-500/25" },
+      { label: "Figma", fg: "text-orange-light", bg: "bg-orange-15", border: "border-orange-25" },
       { label: "Notion", fg: "text-slate-200", bg: "bg-white/[0.06]", border: "border-white/[0.10]" },
     ],
-    accent: "from-indigo-500/20 to-purple-500/10",
+    accent: "from-navy-25 to-orange-10",
   },
   {
     key: "analytics-experimentation",
@@ -125,10 +125,10 @@ const categories: SkillCategory[] = [
       { label: "Surveys", fg: "text-purple-200", bg: "bg-purple-500/15", border: "border-purple-500/25" },
       { label: "Usability", fg: "text-slate-200", bg: "bg-white/[0.06]", border: "border-white/[0.10]" },
       { label: "Heatmaps", fg: "text-slate-200", bg: "bg-white/[0.06]", border: "border-white/[0.10]" },
-      { label: "Miro", fg: "text-indigo-200", bg: "bg-indigo-500/15", border: "border-indigo-500/25" },
-      { label: "Docs", fg: "text-indigo-200", bg: "bg-indigo-500/15", border: "border-indigo-500/25" },
+      { label: "Miro", fg: "text-navy-light", bg: "bg-navy-15", border: "border-navy-25" },
+      { label: "Docs", fg: "text-navy-light", bg: "bg-navy-15", border: "border-navy-25" },
     ],
-    accent: "from-purple-500/20 to-fuchsia-500/10",
+    accent: "from-orange-25 to-navy-10",
   },
   {
     key: "execution-delivery",
@@ -266,7 +266,7 @@ export default function SkillsShowcase() {
                 <ul className="mt-2 space-y-3 text-slate-300">
                   {activeCategory.bullets.map((b) => (
                     <li key={b} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-400 shrink-0" />
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-navy shrink-0" />
                       <span className="flex-1 leading-relaxed">{b}</span>
                     </li>
                   ))}

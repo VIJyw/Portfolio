@@ -39,7 +39,7 @@ export default function CaseStudiesPage() {
                   </h2>
                   <p className="text-slate-400">{cs.oneLine}</p>
                 </div>
-                <div className="shrink-0 text-sm font-semibold text-indigo-300 group-hover:text-indigo-200">
+                <div className="shrink-0 text-sm font-semibold text-navy-light group-hover:text-navy transition-colors">
                   View case study →
                 </div>
               </div>
