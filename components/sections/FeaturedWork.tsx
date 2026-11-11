@@ -35,7 +35,7 @@ export default function FeaturedWork() {
               Shipped products and measurable outcomes
             </h2>
             <p className="text-slate-400 max-w-2xl">
-              Three focused stories: problem, role, impact.
+              Product and data case studies: problem, role, impact.
             </p>
           </div>
           <a

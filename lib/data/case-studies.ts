@@ -588,6 +588,292 @@ export const caseStudies: CaseStudy[] = [
 
   },
 
+  {
+
+    slug: "retail-demand-forecasting",
+
+    productName: "Retail Demand Forecasting",
+
+    oneLine:
+
+      "SQL and Python pipeline on 59M+ Walmart sales records that forecasts 28 days of demand, estimates sales lost to stockouts, and measures price sensitivity.",
+
+    heroAccent: "Data Analytics • Forecasting",
+
+    gradient: "from-blue-500 to-indigo-600",
+
+    image: "/images/retail-demand-forecasting.png",
+
+    card: {
+
+      productName: "Retail Demand Forecasting",
+
+      problem:
+
+        "Retail planners need to know how many units each store will sell of each product over the next few weeks, but many still plan with a simple 'same as last week' rule.",
+
+      role: "Data Analyst (self-directed portfolio project: data pipeline, SQL modeling, forecasting, analysis)",
+
+      impact: [
+
+        "32% lower forecast error (WAPE) than a seasonal-naive baseline at category-store level",
+
+        "$2.1M in estimated lost sales from 28,970 likely stockouts",
+
+        "59M+ daily sales records processed across 3,049 products",
+
+      ],
+
+    },
+
+    sections: {
+
+      overview:
+
+        "A demand forecasting and sell-through analysis built on the Walmart M5 public dataset: 3,049 products in 10 stores across 3 states, with 1,941 days of daily sales (2011 to 2016), weekly shelf prices and a calendar of events. The pipeline loads and models the data in DuckDB with SQL, trains a LightGBM forecasting model in Python, and exports tidy data feeds for Tableau or Power BI. It answers three planning questions: how much will each store sell over the next 4 weeks, where are empty shelves likely costing sales, and how strongly do shoppers react to price.",
+
+      problemStatement: [
+
+        "Planners often forecast with 'same as last week', which ignores seasonality, events and price changes.",
+
+        "Empty shelves hide true demand: a day with zero sales can mean no demand or no stock.",
+
+        "Without price-response estimates, discount depth is set by habit rather than evidence.",
+
+      ],
+
+      goalsAndSuccessMetrics: [
+
+        "Beat the seasonal-naive baseline on forecast error (WAPE) at the levels where planning decisions are made: category, store and chain.",
+
+        "Score the model only on a held-out 28-day test window it never saw during training or tuning.",
+
+        "Estimate lost sales from likely stockouts and size them as a share of revenue.",
+
+        "Measure own-price elasticity for each product category.",
+
+      ],
+
+      myRoleAndResponsibilities: [
+
+        "Designed the end-to-end pipeline: data loading, SQL models, feature engineering, model training, evaluation and exports.",
+
+        "Wrote 6 SQL models in DuckDB using CTEs, window functions, gaps-and-islands and REGR_SLOPE.",
+
+        "Built and evaluated the LightGBM model against two baselines, and documented the method and its limits.",
+
+      ],
+
+      discoveryAndInsights: [
+
+        "The raw file has one column per day (1,941 columns). It had to be unpivoted into 59,181,090 item-store-day rows before any analysis.",
+
+        "Data-quality check: no units were sold on a day an item had no shelf price, so 'has a price that week' is a reliable availability flag.",
+
+        "Many item-store series are intermittent, with many zero-sales days, so the model uses a Tweedie objective built for that pattern.",
+
+      ],
+
+      solution: [
+
+        "Forecasting: LightGBM with 28 SQL-built features (same-weekday lags, 7/28/56/180-day rolling means, volatility, intermittency, price vs. history and vs. other stores, calendar, events and SNAP days).",
+
+        "Baselines: seasonal naive (repeat the last week) and a 28-day moving average.",
+
+        "Stockouts: improbable zero-sales streaks flagged with gaps-and-islands SQL, then turned into an estimate of lost units and revenue.",
+
+        "Pricing: log-log price elasticity with fixed effects, plus volume lift by discount depth.",
+
+        "Outputs: 10 tidy CSV feeds (forecast vs. actual, stockout risk, price effects) ready for Tableau or Power BI.",
+
+      ],
+
+      execution: [
+
+        "Split time into train (23,160,315 rows), a validation window for model selection, and a held-out 28-day test window.",
+
+        "Lagged every sales feature at least 28 days so the full horizon is scored from data available at the forecast date.",
+
+        "Compared 4 model configurations on the validation window only, using a selection rule fixed before the run.",
+
+        "Measured WAPE, RMSE and bias from single item-store-days up to the chain-wide daily total.",
+
+      ],
+
+      resultsAndImpact: [
+
+        "Forecast error (WAPE) vs. seasonal naive: 32% lower at category-store level, 37% lower at store level, 60% lower on the chain-wide daily total.",
+
+        "Forecast bias of -1.95%, vs. -7.36% for the seasonal-naive baseline.",
+
+        "Estimated $2.1M in lost sales (4.65% of the year's revenue) from 28,970 likely stockout events; 7,019 item-stores are chronic (30+ stockout days a year).",
+
+        "Flagged 7,770 slow-moving item-stores: listed 180+ days but sold on fewer than 20% of them.",
+
+        "All three categories are price-inelastic (FOODS -0.52, HOBBIES -0.41, HOUSEHOLD -0.33); discounts deeper than 15% were associated with 1.3x weekly units in FOODS.",
+
+      ],
+
+      keyLearnings: [
+
+        "Gains show up where decisions are made: at single item-store-day level the model is only 0.8% better than a 28-day moving average, but much better at category, store and chain level.",
+
+        "Without inventory data, stockouts and lost sales can only be estimated, so they are reported as estimates.",
+
+        "Price effects here are associations, not causal effects, because the data has no promotion or advertising variables.",
+
+      ],
+
+      whatIdImproveNext: [
+
+        "Build the Tableau or Power BI dashboard on top of the exported data feeds.",
+
+        "Add prediction intervals so planners can set safety stock, not just a single forecast.",
+
+        "Test the approach on data that includes inventory and promotions to confirm the stockout and price estimates.",
+
+      ],
+
+    },
+
+  },
+
+  {
+
+    slug: "glucose-analytics-pipeline",
+
+    productName: "Glucose Analytics Pipeline",
+
+    oneLine:
+
+      "dbt pipeline on Snowflake and PostgreSQL that cleans 1.2M+ glucose monitor, smartwatch and meal-log records from 250 study participants, with 48 automated data quality tests.",
+
+    heroAccent: "Data Engineering • Analytics",
+
+    gradient: "from-emerald-500 to-teal-600",
+
+    card: {
+
+      productName: "Glucose Analytics Pipeline",
+
+      problem:
+
+        "Wearable health data is messy: sensors drop out, wear periods overlap and timestamps duplicate. If those errors reach the analysis, metrics like time-in-range are wrong.",
+
+      role: "Data Analyst (self-directed portfolio project: dbt modeling, data quality testing, dashboard)",
+
+      impact: [
+
+        "99.8% data integrity across downstream models",
+
+        "48 automated dbt data quality tests",
+
+        "1.2M+ raw records from 250 participants modeled",
+
+      ],
+
+    },
+
+    sections: {
+
+      overview:
+
+        "A dbt transformation pipeline on Snowflake and PostgreSQL for a public clinical study dataset of continuous glucose monitor (CGM), smartwatch and meal-log records from 250 participants. The pipeline tests and quarantines bad records before modeling, then produces daily health metrics such as time-in-range and glycemic variability, with a Tableau dashboard on top.",
+
+      problemStatement: [
+
+        "Sensor dropouts, overlapping wear intervals and duplicate timestamps are common in wearable data.",
+
+        "Errors that reach the models distort daily metrics like time-in-range and glycemic variability.",
+
+        "Silently dropping bad records hides data problems instead of making them visible.",
+
+      ],
+
+      goalsAndSuccessMetrics: [
+
+        "Catch bad records with automated tests before they reach any downstream model.",
+
+        "Keep data integrity high across all downstream models.",
+
+        "Produce reliable daily and rolling 7-day glucose metrics for a dashboard.",
+
+      ],
+
+      myRoleAndResponsibilities: [
+
+        "Built the dbt project and its models on Snowflake and PostgreSQL.",
+
+        "Wrote the custom and generic data quality tests and the quarantine logic.",
+
+        "Built the Tableau dashboard.",
+
+      ],
+
+      discoveryAndInsights: [
+
+        "5.4% of raw records were anomalies, enough to distort daily metrics if left in.",
+
+        "Average CGM wear-time adherence was 92% across 250 participants, so adherence itself needed tracking alongside glucose metrics.",
+
+      ],
+
+      solution: [
+
+        "48 dbt tests (custom singular and generic) for sensor dropouts, overlapping wear intervals and duplicate timestamps.",
+
+        "Failing records are quarantined instead of being silently dropped.",
+
+        "Daily time-in-range (TIR) and glycemic variability (CV and standard deviation) models.",
+
+        "Rolling 7-day metrics with SQL window functions (PARTITION BY, ROWS BETWEEN 6 PRECEDING AND CURRENT ROW).",
+
+        "Tableau dashboard for post-meal glucose spikes and adherence trends.",
+
+      ],
+
+      execution: [
+
+        "Loaded 1.2M+ raw CGM, smartwatch and meal-log records.",
+
+        "Ran the dbt tests so bad records are flagged before modeling.",
+
+        "Built the rolling metrics in SQL so the dashboard updates automatically.",
+
+      ],
+
+      resultsAndImpact: [
+
+        "99.8% data integrity across downstream models.",
+
+        "5.4% of raw records flagged and quarantined as anomalies.",
+
+        "92% average CGM wear-time adherence measured across 250 participants.",
+
+        "Rolling 7-day glucose metrics calculated automatically for the dashboard.",
+
+      ],
+
+      keyLearnings: [
+
+        "Testing data before modeling is cheaper than explaining wrong metrics afterwards.",
+
+        "Quarantining bad records keeps data problems visible and auditable.",
+
+      ],
+
+      whatIdImproveNext: [
+
+        "Publish the dashboard on Tableau Public and make the repository public.",
+
+        "Add alerts when the share of quarantined records rises above its usual level.",
+
+      ],
+
+    },
+
+  },
+
 ];
 
 
